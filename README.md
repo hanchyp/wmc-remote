@@ -1,4 +1,4 @@
-# SERVER.JS
+# INDEX.JS
 ## Initialize
 Menginisialisasi variabel global
 ```javascript

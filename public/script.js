@@ -250,9 +250,11 @@ class AirConditionerMonitor {
 
   connectWebsocketServer() {
     try {
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const isProduction = window.location.hostname.includes("railway.app");
+      const protocol =
+        window.location.protocol === "https:" || isProduction ? "wss:" : "ws:";
       const wsUrl = `${protocol}//${window.location.host}`;
-      
+
       console.log(`🔗 Connecting to: ${wsUrl}`);
       this.ws = new WebSocket(wsUrl);
 
